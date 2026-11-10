@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grove — Student OS</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="ic-sprig" viewBox="0 0 100 100">
+    <path d="M50 92 C 50 60, 50 40, 50 8" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M50 70 C 33 64, 24 54, 18 38" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M50 52 C 67 46, 78 36, 84 20" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M50 32 C 39 27, 31 19, 28 8" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M4 20c0-8 5-15 15-16-1 10-8 15-16 16Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5M6 10v9h12v-9" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-cap" viewBox="0 0 24 24"><path d="M12 5 2 9.5 12 14l10-4.5L12 5Z M6 11.8V16c0 1.3 2.7 3 6 3s6-1.7 6-3v-4.2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-check2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M8.5 12.5 11 15l5-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-sprout" viewBox="0 0 24 24"><path d="M12 21v-8M12 13c0-4-3-6-7-6 0 4 3 6 7 6Zm0 0c0-5 3-8 7-8 0 5-3 8-7 8Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-feather" viewBox="0 0 24 24"><path d="M20 4c-8 0-14 6-14 14v2M6 20 20 6M11 15H7v-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-wallet" viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="13" rx="3" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M3 10h18M15.5 14h2.2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.8-8-11a4.8 4.8 0 0 1 8-3.6A4.8 4.8 0 0 1 20 9c0 6.2-8 11-8 11Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-cal" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="15" rx="3" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M3.5 10h17M8 3.5v3M16 3.5v3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="ic-bars" viewBox="0 0 24 24"><path d="M5 20V13M12 20V7M19 20v-9" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="ic-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 2.5v3M12 18.5v3M4.2 6.2l2.2 2.2M17.6 15.6l2.2 2.2M2.5 12h3M18.5 12h3M4.2 17.8l2.2-2.2M17.6 8.4l2.2-2.2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M20 20 15.5 15.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-play" viewBox="0 0 24 24"><path d="M7 5v14l12-7Z" stroke="currentColor" stroke-width="1.5" fill="currentColor" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/></symbol>
+  <symbol id="ic-edit" viewBox="0 0 24 24"><path d="M4 20h4L20 8l-4-4L4 16v4Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div id="app">
+  <aside id="sidebar">
+    <div class="brand"><svg><use href="#ic-leaf"/></svg><span>Grove</span></div>
+    <nav class="navlist" id="navlist"></nav>
+    <div class="sidebar-foot">
+      <div class="today-pill" id="today-pill"></div>
+      <div class="navitem" data-view="settings" id="nav-settings"><svg><use href="#ic-gear"/></svg><span>Settings</span></div>
+    </div>
+    <div class="deco-sprig"><svg width="100%" height="100%"><use href="#ic-sprig"/></svg></div>
+  </aside>
+
+  <div id="main">
+    <div id="topbar">
+      <h1 id="pagetitle">Home</h1>
+      <div class="searchwrap"><svg><use href="#ic-search"/></svg><input id="global-search" placeholder="Search everything…" /></div>
+      <div class="spacer"></div>
+      <button class="btn btn-primary" id="quick-add-btn"><svg><use href="#ic-plus"/></svg>Quick add</button>
+    </div>
+    <div id="view"></div>
+  </div>
+</div>
+
+<div id="modal-root"><div class="overlay" id="modal-overlay"></div><div class="modal" id="modal-body"></div></div>
+
+<script src="js/db.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/state.js"></script>
+<script src="js/router.js"></script>
+<script src="js/render.js"></script>
+<script src="js/events.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
