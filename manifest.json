@@ -1,9 +1,0 @@
-{
-  "name": "Grove — Student OS",
-  "short_name": "Grove",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#191c19",
-  "theme_color": "#191c19",
-  "icons": []
-}
